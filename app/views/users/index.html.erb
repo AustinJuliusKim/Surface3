@@ -1,0 +1,15 @@
+<div>
+	<section>
+		<h1>Welcome!</h1>
+	</section>
+	<section>
+		<% @users.each do |user|  %>
+			<div class="col-md-4">
+				<li class="well-sm">
+					<strong> <%= user.username %> </strong>
+				</li>
+				<%= link_to "Show", user_path(user) %>
+			</div>
+		<% end %>
+	</section>
+</div>

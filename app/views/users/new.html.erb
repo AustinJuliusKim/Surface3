@@ -1,0 +1,30 @@
+<div>
+	<section>
+		<%= form_for @user do |f| %>
+			<div>
+				<%= f.label :username  %>
+				<%= f.text_field :username  %>
+			</div>
+
+			<div>
+				<%= f.label :password_digest  %>
+				<%= f.password_field :password_digest  %>
+			</div>
+
+			<div>
+				<%= f.label :password_digest  %>
+				<%= f.password_field :password_digest  %>
+			</div>
+
+			<div>
+				<%= f.label :email  %>
+				<%= f.text_field :email  %>
+			</div>
+
+			<div>
+				<%= f.submit "Join now!", class: "btn btn-primary"  %>
+			</div>
+		<% end %>
+
+	</section>
+</div>
