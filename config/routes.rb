@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   #Routes for posts
   post "users/:id/posts" => "posts#create", as: :user_posts
-  delete "users/:id/posts" => "posts#destroy"
+  delete "users/:id/posts" => "posts#destroy", as: :destroy_posts
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

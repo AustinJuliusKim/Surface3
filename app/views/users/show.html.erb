@@ -33,7 +33,7 @@
 	 		<% @user.posts.each do |post|  %>
 				<div>
 					<p>User <%= post.body  %></p>
-					<%= link_to "Delete post", :user_posts, method: :delete, data: { confirm: "Are you sure?"} %>
+					<%= link_to "Delete post", :destroy_posts, method: :delete, data: { confirm: "Are you sure?"} %>
 				</div>
 			<% end %>
 	</section>

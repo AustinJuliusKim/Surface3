@@ -23,6 +23,6 @@ class PostsController < ApplicationController
 		if @post.present?
 			@post.destroy
 		end
-		redirect_to users_path
+		redirect_to user_path
 	end
 end
