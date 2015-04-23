@@ -8,8 +8,6 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
-
-
 	def new
 		@user = User.new
 	end
@@ -45,7 +43,7 @@ class UsersController < ApplicationController
 
 	private
 	def user_params
-		params.require(:user).permit(:username, :email, :password_digest)
+		params.require(:user).permit(:username, :email, :password_digest, :full_name, :gender, :age, :looking_for, :bio, :image)
 	end
 
 end

@@ -51,3 +51,11 @@ gem 'quiet_assets'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
+gem 'carrierwave'
+
+gem 'fog'         
+# required for Amazon S3
+
+gem 'rmagick'   
+# for post-upload image processing
+

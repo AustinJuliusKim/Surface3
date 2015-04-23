@@ -6,4 +6,25 @@
 			<%= link_to "Edit", edit_user_path %>
 		</div>
 	</section>
+
+	<section>
+		<div>
+			<%= @user.full_name  %>
+		</div>
+		<div>
+			<%= @user.age  %>
+		</div>
+		<div>
+			<%= @user.gender  %>
+		</div>
+		<div>
+			<%= @user.looking_for  %>
+		</div>
+		<div>
+			<%= @user.bio  %>
+		</div>
+		<div>
+			<%= image_tag @user.image %>
+		</div>
+	</section>
 </div>
