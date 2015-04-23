@@ -6,10 +6,12 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@post = Post.new
 	end
 
 	def new
 		@user = User.new
+
 	end
 
 	def create
