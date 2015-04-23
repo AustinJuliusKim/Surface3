@@ -22,6 +22,26 @@
 			</div>
 
 			<div>
+				<%= f.label :full_name  %>
+				<%= f.text_field :full_name  %>
+			</div>
+
+			<div>
+				<%= f.label :age  %>
+				<%= f.number_field :age  %>
+			</div>
+
+			<div>
+				<%= f.label :gender  %>
+				<%= f.text_field :gender  %>
+			</div>
+
+			<div>
+				<%= f.label :looking_for  %>
+				<%= f.text_area :looking_for  %>
+			</div>
+
+			<div>
 				<%= f.submit "Submit", class: "btn btn-submit"  %>
 			</div>
 			<div>
@@ -32,32 +52,6 @@
 	</section>
 
 	<section>
-		<!-- Where profile form will be -->
-		<%= form_for [@user, @profile] do |f| %>
-			<div>
-				<%= f.label :full_name  %>
-				<%= f.text_field :full_name  %>
-			</div>
-			<div>
-				<%= f.label :age  %>
-				<%= f.number_field :age  %>
-			</div>
-			<div>
-				<%= f.label :gender  %>
-				<%= f.text_field :gender  %>
-			</div>
-			<div>
-				<%= f.label :looking_for  %>
-				<%= f.text_area :looking_for  %>
-			</div>
-			<div>
-				<%= f.label :bio  %>
-				<%= f.text_area :bio  %>
-			</div>
-			<div>
-				<%= f.submit "Submit", class: "btn btn-submit"  %>
-			</div>
-
-		<% end %>
+		
 	</section>
 </div>

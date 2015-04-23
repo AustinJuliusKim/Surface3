@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   patch "users/:id" => "users#update"
   delete "users/:id" => "users#destroy"
 
-  # Routes for profile
-  post "users/:id/profile" => "profiles#new", as: :profile
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
