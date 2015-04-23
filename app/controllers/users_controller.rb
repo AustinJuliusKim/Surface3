@@ -8,8 +8,6 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
-
-
 	def new
 		@user = User.new
 	end
@@ -26,6 +24,7 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
+	 	@profile = Profile.new
 	end
 
 	def update

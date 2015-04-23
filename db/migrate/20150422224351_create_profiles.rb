@@ -6,7 +6,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :gender
       t.text :looking_for
       t.text :bio
-      t.references :user, index: true, foreign_key: true
+      t.belongs_to :user, index: true
 
       t.timestamps null: false
     end
