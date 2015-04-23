@@ -6,6 +6,7 @@ class ChangeUsersTable < ActiveRecord::Migration
   		t.string :gender
   		t.text :looking_for
   		t.text :bio
+  		t.string :image
   	end
   end
 end

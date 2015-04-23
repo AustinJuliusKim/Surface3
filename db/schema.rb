@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150423013109) do
     t.string   "gender"
     t.text     "looking_for"
     t.text     "bio"
+    t.string   "image"
   end
 
 end
