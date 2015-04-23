@@ -27,4 +27,27 @@
 			<%= image_tag @user.image %>
 		</div>
 	</section>
+
+	<section>
+	 	<h1>Wall</h1>
+	 		<% @user.posts.each do |post|  %>
+				<div>
+					<p>User <%= post.body  %></p>
+					<%= link_to "Delete post", :user_posts, method: :delete, data: { confirm: "Are you sure?"} %>
+				</div>
+			<% end %>
+	</section>
+
+	<section>
+		<h1>Leave a post</h1>
+		<%= form_for [@user, @post] do |f| %>
+			<div>
+				<%= f.label :body, "Post" %>
+				<%= f.text_area :body  %>
+			</div>
+			
+
+			<%= f.submit "Post"  %>
+		<% end %>
+	</section>
 </div>
