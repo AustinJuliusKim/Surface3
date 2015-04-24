@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   post "users/:id/posts" => "posts#create", as: :user_posts
   delete "users/:id/posts" => "posts#destroy", as: :destroy_posts
 
+  #Routes for sessions
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
