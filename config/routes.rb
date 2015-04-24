@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   delete "users/:id" => "users#destroy"
 
   #Routes for posts
-  post "users/posts" => "posts#create", as: :user_posts
-  delete "users/posts/:id" => "posts#destroy", as: :destroy_posts
+  post "users/:id/posts" => "posts#create", as: :user_posts
+  delete "users/:id/posts" => "posts#destroy", as: :destroy_posts
 
   #Routes for sessions
   get '/login' => 'sessions#new'

@@ -26,6 +26,12 @@
 			<% end %>
 		</div>	
 		<div>
+			<% if flash[:success] %>
+				<h4 class="bg-success flash">
+				<%= flash[:success]  %></h4>
+			<% end %>
+		</div>	
+		<div>
 			<% if flash[:error] %>
 				<h4 class="bg-danger flash">
 				<%= flash[:error]  %></h4>
