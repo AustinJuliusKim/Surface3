@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   root "users#index"
   get "users/" => "users#index"
-  get "users/new" => "users#new", as: :new_user
+  get "signup/" => "users#new", as: :signup
   get "users/:id" => "users#show", as: :user
   post "users/" => "users#create"
   get "users/:id/edit" => "users#edit", as: :edit_user
   patch "users/:id" => "users#update"
+
   delete "users/:id" => "users#destroy"
 
   #Routes for posts
-  post "users/:id/posts" => "posts#create", as: :user_posts
-  delete "users/:id/posts" => "posts#destroy", as: :destroy_posts
+  post "users/:user_id/posts/:id" => "posts#create", as: :new_user_post
+  patch "users/:user_id/posts/:id/edit" => "posts#update", as: :edit_user_post
+  delete "users/:user_id/posts/:id" => "posts#destroy", as: :destroy_post
 
   #Routes for sessions
   get "/login" => "sessions#new"
@@ -47,9 +49,7 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  # resources :users do
-  #   resources :posts
-  # end
+
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

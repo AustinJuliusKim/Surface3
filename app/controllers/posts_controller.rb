@@ -11,6 +11,10 @@ class PostsController < ApplicationController
 		@post = Post.new
 	end
 
+	def edit
+		@post = Post.find(params[:id])
+	end
+
 	def create
 		@user = User.find(params[:id])
 		@post = @user.posts.new(params.require(:post).permit(:body))
@@ -23,11 +27,19 @@ class PostsController < ApplicationController
 
 	end
 
+	def update
+		@post = Post.find(params[:id])
+		unless @post.update_attributes(params.require(:post).permit(:body))
+			redirect_to user_path(@user)
+		end
+	end
+
 	def destroy
 		@post = Post.find(params[:id])
 		if @post.present?
 			@post.destroy
-		end
+		else
 		redirect_to user_path
+		end
 	end
 end
