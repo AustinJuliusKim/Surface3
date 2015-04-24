@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 			flash[:success] = "Post successful!"
 			redirect_to user_path(@user)
 		else
-			render :show
+			redirect_to user_path(@user)
 		end
 
 	end
