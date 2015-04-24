@@ -3,15 +3,16 @@
 		<h1>Welcome!</h1>
 	</section>
 	<section>
+		<ul>
 		<% @users.each do |user|  %>
 			<div class="col-md-4">
 				<li class="well-sm">
-					<%= image_tag user.image.url(:thumb) %>
+					<%= image_tag user.image.url(:thumb), class: "img-circle" %>
 					<strong> <%= user.username %> </strong>
 					<%= link_to "Show", user_path(user) %>
 				</li>
-				
 			</div>
 		<% end %>
+		</ul>
 	</section>
 </div>

@@ -1,4 +1,23 @@
 <div>
+	<h1>Join</h1>
+	<section>
+		<% if @user.errors.any? %>
+		<div>
+			<h4 class="text-danger">
+			 	<%= pluralize(@user.errors.count, "error")  %>
+			 </h4>
+			 <ul class="list-group-item list-group-item-danger">
+				<% @user.errors.full_messages.each do |msg| %>
+				<li class= "list-group-item list-group-item-danger">
+					<%= msg.downcase  %>
+				</li>
+				<% end %>
+			 </ul>
+		</div>
+		<% end %>
+	</section>
+
+
 	<section>
 		<%= form_for @user do |f| %>
 			<div>
@@ -12,8 +31,8 @@
 			</div>
 
 			<div>
-				<%= f.label :password  %>
-				<%= f.password_field :password %>
+				<%= f.label :password_confirmation  %>
+				<%= f.password_field :password_confirmation %>
 			</div>
 
 			<div>

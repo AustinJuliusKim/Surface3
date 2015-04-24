@@ -7,9 +7,44 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/nav'  %>
+
 <div class="container-fluid">
+<%= render 'layouts/nav'  %>
+<hr>
+
+
+
+
+
+
+
+	<section>
+		<div>
+			<% if flash[:welcome] %>
+				<h4 class="bg-success flash">
+				<%= flash[:welcome]  %></h4>
+			<% end %>
+		</div>	
+		<div>
+			<% if flash[:error] %>
+				<h4 class="bg-danger flash">
+				<%= flash[:error]  %></h4>
+			<% end %>
+		</div>	
+	</section>
+
 	<%= yield %>
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<%= render 'layouts/footer'  %>
 </div>
 </body>
 </html>
