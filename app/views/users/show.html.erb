@@ -1,6 +1,6 @@
 <div>
 	<section>
-		<h1>Welcome to <%= @user.username %>'s page, <%= current_user.username %> </h1>
+		<h1>Welcome to <%= @user.username %>'s page, <% if logged_in? %><%= current_user.username %> <% end %></h1>
 		<div>
 			<%= link_to "Back", users_path %>
 			<%= link_to "Edit", edit_user_path %>
