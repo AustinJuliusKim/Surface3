@@ -14,8 +14,13 @@ class PostsController < ApplicationController
 	def create
 		@user = User.find(params[:id])
 		@post = @user.posts.new(params.require(:post).permit(:body))
-		@post.save
-		redirect_to user_path(@user)
+		if @post.save
+			flash[:success] = "Post successful!"
+			redirect_to user_path(@user)
+		else
+			render :show
+		end
+
 	end
 
 	def destroy
