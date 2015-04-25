@@ -38,6 +38,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		if @post.present?
 			@post.destroy
+			redirect_to user_path(current_user)
 		else
 		redirect_to user_path
 		end

@@ -7,12 +7,20 @@ Rails.application.routes.draw do
   get "users/:id/edit" => "users#edit", as: :edit_user
   patch "users/:id" => "users#update"
 
+
+# get "/users/:user_id/posts/:id" => "users#show", as: :user_post
+delete "/users/:user_id/posts/:id"=> "posts#destroy", as: :delete_user_post
+
+
+
+
+
   delete "users/:id" => "users#destroy"
 
   #Routes for posts
-  post "users/:user_id/posts/:id" => "posts#create", as: :new_user_post
-  patch "users/:user_id/posts/:id/edit" => "posts#update", as: :edit_user_post
-  delete "users/:user_id/posts/:id" => "posts#destroy", as: :destroy_post
+  post "users/:id/posts/" => "posts#create", as: :user_posts
+  #patch "users/:user_id/posts/:id/edit" => "posts#update", as: :edit_user_post
+  delete "/users/:user_id/posts/:id" => "posts#destroy", as: :destroy
 
   #Routes for sessions
   get "/login" => "sessions#new"

@@ -30,13 +30,13 @@
 
 	<section>
 	 	<h1>Wall</h1>
-	 		<% @user.posts.each do |post|  %>
+	 		<% @posts.each do |post|  %>
 				<div>
 					<p><%= post.body  %></p>
 					
 				</div>
 				<!-- Delete link disabled due to route/controller error -->
-				<%#= link_to "Delete", destroy_post, method: :delete, data: { confirm: "Are you sure?"} %><!-- End link -->
+				<%= link_to "Delete", delete_user_post_path(@user,post), method: :delete, data: { confirm: "Are you sure?"} %><!-- End link -->
 				<%#= link_to "Update", :edit_user_post %>
 			<% end %>
 
