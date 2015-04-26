@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	attr_reader :password
 	mount_uploader :image, AvatarUploader
-	has_many :posts
+	has_many :posts, dependent: :destroy
 	before_save :format_user_input, except: [:update]
 
 	def password=(unencrypted_password)

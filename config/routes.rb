@@ -10,18 +10,10 @@ Rails.application.routes.draw do
   delete "/users/:user_id/posts/:id"=> "posts#destroy", as: :delete_user_post
   delete "users/:id" => "users#destroy"
 
-  #Routes for posts
-  
-  #patch "users/:user_id/posts/:id/edit" => "posts#update", as: :edit_user_post
-
-
   #Routes for sessions
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   delete "/logout" => "sessions#destroy"
-
-  #Routes for feeback
-  
   
 
   # The priority is based upon order of creation: first created -> highest priority.

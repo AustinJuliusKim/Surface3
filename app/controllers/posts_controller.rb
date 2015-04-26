@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 	end
 
 	def edit
+		@user = User.find(params[:id])
 		@post = Post.find(params[:id])
 	end
 
@@ -24,10 +25,12 @@ class PostsController < ApplicationController
 		else
 			redirect_to user_path(@user)
 		end
-
 	end
+	
+	@post = @user.posts.update_attributes(params.require(:post).permit(:body))
 
 	def update
+		@user = User.find(params[:id])
 		@post = Post.find(params[:id])
 		unless @post.update_attributes(params.require(:post).permit(:body))
 			redirect_to user_path(@user)

@@ -33,11 +33,8 @@
 	 		<% @posts.each do |post|  %>
 				<div>
 					<p><%= post.body  %></p>
-					
 				</div>
-				<!-- Delete link disabled due to route/controller error -->
-				<%= link_to "Delete", delete_user_post_path(@user,post), method: :delete, data: { confirm: "Are you sure?"} %><!-- End link -->
-				<%#= link_to "Update", :edit_user_post %>
+				<%= link_to "Delete", delete_user_post_path(@user,post), method: :delete, data: { confirm: "Are you sure?"} %>
 			<% end %>
 
 	</section>
